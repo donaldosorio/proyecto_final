@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Historia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cuestionario de Historia</h1>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. ¿Cuáles fueron las principales causas de la Revolución Francesa?</legend>
+                <label><input type="radio" name="q1" value="a"> Desigualdad social, crisis económica y la influencia de las ideas ilustradas.</label><br>
+                <label><input type="radio" name="q1" value="b"> El avance de las ciencias y la tecnología.</label><br>
+                <label><input type="radio" name="q1" value="c"> La unidad de la clase obrera.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. ¿Qué evento marcó el comienzo de la Revolución Francesa?</legend>
+                <label><input type="radio" name="q2" value="a"> La toma de la Bastilla.</label><br>
+                <label><input type="radio" name="q2" value="b"> La firma del Tratado de Versalles.</label><br>
+                <label><input type="radio" name="q2" value="c"> La coronación de Napoleón Bonaparte.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 3 -->
+            <fieldset>
+                <legend>3. ¿Qué tratado puso fin a la Primera Guerra Mundial?</legend>
+                <label><input type="radio" name="q3" value="a"> El Tratado de París.</label><br>
+                <label><input type="radio" name="q3" value="b"> El Tratado de Versalles.</label><br>
+                <label><input type="radio" name="q3" value="c"> El Tratado de Tordesillas.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. ¿Qué fue la Guerra Fría?</legend>
+                <label><input type="radio" name="q4" value="a"> Un conflicto militar directo entre Estados Unidos y la Unión Soviética.</label><br>
+                <label><input type="radio" name="q4" value="b"> Una serie de enfrentamientos indirectos y tensiones políticas entre las dos superpotencias tras la Segunda Guerra Mundial.</label><br>
+                <label><input type="radio" name="q4" value="c"> Una guerra económica entre Europa y Japón.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. ¿Cuál fue el principal resultado de la Segunda Guerra Mundial?</legend>
+                <label><input type="radio" name="q5" value="a"> La creación de la ONU y el comienzo de la Guerra Fría.</label><br>
+                <label><input type="radio" name="q5" value="b"> La independencia de las colonias africanas.</label><br>
+                <label><input type="radio" name="q5" value="c"> La derrota de los Aliados.</label><br>
+            </fieldset>
+
+            <button type="button" onclick="submitQuiz()">Enviar Cuestionario</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+
+    <script>
+        // Función para calcular el puntaje
+        function submitQuiz() {
+            let score = 0;
+
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: "a", 
+                q2: "a", 
+                q3: "b", 
+                q4: "b", 
+                q5: "a"
+            };
+
+            // Comprobar respuestas
+            for (let i = 1; i <= 5; i++) {
+                let selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").innerText = `Tu puntaje es ${score} de 5.`;
+        }
+
+        function goBack() {
+            window.location.href = "historia.html";
+        }
+    </script>
+</body>
+</html>

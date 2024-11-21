@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Química</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cuestionario de Química</h1>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. ¿Qué es la tabla periódica?</legend>
+                <label><input type="radio" name="q1" value="a"> Un mapa de los elementos químicos.</label><br>
+                <label><input type="radio" name="q1" value="b"> Un sistema de organización de los elementos según sus propiedades.</label><br>
+                <label><input type="radio" name="q1" value="c"> Una lista de todos los compuestos químicos.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. ¿Qué representa la ley de conservación de la masa?</legend>
+                <label><input type="radio" name="q2" value="a"> La masa de los reactivos es siempre mayor que la de los productos.</label><br>
+                <label><input type="radio" name="q2" value="b"> La masa total de los reactivos es igual a la de los productos en una reacción química.</label><br>
+                <label><input type="radio" name="q2" value="c"> La masa de los productos es siempre cero.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 3 -->
+            <fieldset>
+                <legend>3. ¿Qué es una reacción de síntesis?</legend>
+                <label><input type="radio" name="q3" value="a"> Dos o más sustancias se combinan para formar un solo producto.</label><br>
+                <label><input type="radio" name="q3" value="b"> Un compuesto se descompone en dos o más productos.</label><br>
+                <label><input type="radio" name="q3" value="c"> Un elemento reemplaza a otro en un compuesto.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. ¿Qué es un ácido según la teoría de Arrhenius?</legend>
+                <label><input type="radio" name="q4" value="a"> Una sustancia que libera protones (H+) en solución acuosa.</label><br>
+                <label><input type="radio" name="q4" value="b"> Una sustancia que acepta electrones.</label><br>
+                <label><input type="radio" name="q4" value="c"> Una sustancia que aumenta el pH de una solución.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. ¿Qué es una reacción de desplazamiento?</legend>
+                <label><input type="radio" name="q5" value="a"> Un compuesto se divide en dos productos.</label><br>
+                <label><input type="radio" name="q5" value="b"> Un elemento reemplaza a otro en un compuesto.</label><br>
+                <label><input type="radio" name="q5" value="c"> Dos compuestos intercambian sus iones.</label><br>
+            </fieldset>
+
+            <button type="button" onclick="submitQuiz()">Enviar Cuestionario</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: "b", 
+                q2: "b", 
+                q3: "a", 
+                q4: "a", 
+                q5: "b"
+            };
+
+            // Comprobar respuestas
+            for (let i = 1; i <= 5; i++) {
+                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById('quizForm').style.display = 'none';
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            document.getElementById('score').textContent = `Tu puntaje es: ${score} de 5`;
+        }
+
+        function goBack() {
+            window.location.href = "quimica.html"; // Regresar a la página del curso
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Programación</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cuestionario de Programación</h1>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. ¿Qué es una variable en programación?</legend>
+                <label><input type="radio" name="q1" value="a"> Un tipo de dato primitivo.</label><br>
+                <label><input type="radio" name="q1" value="b"> Un espacio de almacenamiento para un valor.</label><br>
+                <label><input type="radio" name="q1" value="c"> Un método para ordenar datos.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. ¿Cómo se declara una variable en Java?</legend>
+                <label><input type="radio" name="q2" value="a"> var x = 5;</label><br>
+                <label><input type="radio" name="q2" value="b"> int x = 5;</label><br>
+                <label><input type="radio" name="q2" value="c"> x = 5;</label><br>
+            </fieldset>
+
+            <!-- Pregunta 3 -->
+            <fieldset>
+                <legend>3. ¿Qué significa "condicional" en programación?</legend>
+                <label><input type="radio" name="q3" value="a"> Un bucle de repetición.</label><br>
+                <label><input type="radio" name="q3" value="b"> Una estructura que ejecuta código según una condición.</label><br>
+                <label><input type="radio" name="q3" value="c"> Un tipo de variable.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. ¿Cuál es la sintaxis para crear un método en Java?</legend>
+                <label><input type="radio" name="q4" value="a"> method miMetodo() {}</label><br>
+                <label><input type="radio" name="q4" value="b"> void miMetodo() {}</label><br>
+                <label><input type="radio" name="q4" value="c"> function miMetodo() {}</label><br>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. ¿Qué hace la función `print()` en Python?</legend>
+                <label><input type="radio" name="q5" value="a"> Imprime un mensaje en consola.</label><br>
+                <label><input type="radio" name="q5" value="b"> Imprime una variable en la pantalla del programa.</label><br>
+                <label><input type="radio" name="q5" value="c"> Detiene la ejecución del código.</label><br>
+            </fieldset>
+
+            <button type="button" onclick="submitQuiz()">Enviar Cuestionario</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+
+    <script>
+        // Función para calcular el puntaje
+        function submitQuiz() {
+            let score = 0;
+
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: "b", 
+                q2: "b", 
+                q3: "b", 
+                q4: "b", 
+                q5: "a"
+            };
+
+            // Comprobar respuestas
+            for (let i = 1; i <= 5; i++) {
+                const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById('quizForm').style.display = 'none';
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            document.getElementById('score').textContent = `Tu puntaje es: ${score} de 5`;
+        }
+
+        // Función para regresar al cuestionario
+        function goBack() {
+            window.location.href = "programacion.html";
+        }
+    </script>
+</body>
+</html>
+
+
+

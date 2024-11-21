@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación de Física</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Evaluación de Física</h1>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. ¿Qué establece la primera ley de Newton?</legend>
+                <label><input type="radio" name="q1" value="a"> Un objeto en movimiento continuará en movimiento a menos que una fuerza externa lo detenga.</label><br>
+                <label><input type="radio" name="q1" value="b"> La aceleración de un objeto es directamente proporcional a la fuerza que actúa sobre él.</label><br>
+                <label><input type="radio" name="q1" value="c"> Para cada acción, existe una reacción igual y opuesta.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. ¿Qué describe la segunda ley de la termodinámica?</legend>
+                <label><input type="radio" name="q2" value="a"> La energía total en un sistema aislado permanece constante.</label><br>
+                <label><input type="radio" name="q2" value="b"> La entropía de un sistema aislado siempre aumenta con el tiempo.</label><br>
+                <label><input type="radio" name="q2" value="c"> La energía no puede ser transformada, solo conservada.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 3 -->
+            <fieldset>
+                <legend>3. ¿Qué nos dice el principio de incertidumbre de Heisenberg?</legend>
+                <label><input type="radio" name="q3" value="a"> No es posible conocer simultáneamente la posición y la velocidad exacta de una partícula.</label><br>
+                <label><input type="radio" name="q3" value="b"> La velocidad de una partícula es siempre constante.</label><br>
+                <label><input type="radio" name="q3" value="c"> La energía de una partícula es fija en el tiempo.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. ¿Qué es la dualidad onda-partícula?</legend>
+                <label><input type="radio" name="q4" value="a"> Las partículas subatómicas pueden comportarse como partículas o como ondas, dependiendo de cómo se midan.</label><br>
+                <label><input type="radio" name="q4" value="b"> Las ondas pueden convertirse en partículas al ser observadas.</label><br>
+                <label><input type="radio" name="q4" value="c"> Las partículas nunca se comportan como ondas.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. ¿Cuál es la aplicación práctica de la primera ley de la termodinámica?</legend>
+                <label><input type="radio" name="q5" value="a"> La conservación de la energía en un motor térmico.</label><br>
+                <label><input type="radio" name="q5" value="b"> La transformación de la energía nuclear en energía eléctrica.</label><br>
+                <label><input type="radio" name="q5" value="c"> El comportamiento de las partículas subatómicas.</label><br>
+            </fieldset>
+
+            <button type="button" onclick="submitQuiz()">Enviar Evaluación</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+
+    <script>
+        // Función para calcular el puntaje
+        function submitQuiz() {
+            let score = 0;
+
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: "a", 
+                q2: "b", 
+                q3: "a", 
+                q4: "a", 
+                q5: "a"
+            };
+
+            // Comprobar respuestas
+            for (let i = 1; i <= 5; i++) {
+                let selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").innerText = `Tu puntaje es ${score} de 5.`;
+        }
+
+        function goBack() {
+            window.location.href = "fisica.html"; 
+        }
+    </script>
+</body>
+</html>
+
+
+

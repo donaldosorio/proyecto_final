@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Historia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Curso de Historia</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introducción</h2>
+            <p>En este curso, exploraremos los eventos más importantes que marcaron la historia de la humanidad, desde la Revolución Francesa hasta la Segunda Guerra Mundial. Estudiaremos los contextos sociales, políticos y económicos que influyeron en estos momentos cruciales y su impacto en el mundo moderno.</p>
+            <p><strong>Objetivos:</strong> 
+                <ul>
+                    <li>Comprender los antecedentes y las consecuencias de eventos clave en la historia mundial.</li>
+                    <li>Analizar los factores sociales, políticos y económicos que influyeron en estos eventos.</li>
+                    <li>Estudiar la evolución de las ideas y movimientos que transformaron el mundo.</li>
+                </ul>
+            </p>
+        </section>
+        <section>
+            <h2>Recursos</h2>
+            <article>
+                <h3>Revolución Francesa</h3>
+                <img src="imagenes/revolucion_francesa.jpg" alt="Revolución Francesa" style="max-width: 25%; height: auto;">
+                <p>Aprende sobre las causas, el desarrollo y las consecuencias de la Revolución Francesa, un evento clave que definió el rumbo de Europa y del mundo.</p>
+                <p><strong>Temas cubiertos:</strong>
+                    <ul>
+                        <li>Causas sociales, políticas y económicas de la Revolución.</li>
+                        <li>Principales eventos y figuras clave: Robespierre, Luis XVI, y la toma de la Bastilla.</li>
+                        <li>Impacto de la Revolución en la política europea y mundial.</li>
+                    </ul>
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ttdq818TGD0?si=5uiFfgVJ--edhOTu" title="Revolución Francesa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+            <article>
+                <h3>Segunda Guerra Mundial</h3>
+                <img src="imagenes/segunda_guerra.jpg" alt="Segunda Guerra Mundial" style="max-width: 25%; height: auto;">
+                <p>Descubre los momentos clave de la Segunda Guerra Mundial, un conflicto global que cambió la política, la economía y las relaciones internacionales para siempre.</p>
+                <p><strong>Temas cubiertos:</strong>
+                    <ul>
+                        <li>Causas y antecedentes de la guerra: Tratado de Versalles y el ascenso del fascismo.</li>
+                        <li>Principales batallas y frentes: Europa, África y el Pacífico.</li>
+                        <li>El impacto de la guerra: la creación de la ONU, el comienzo de la Guerra Fría y la reconstrucción mundial.</li>
+                    </ul>
+                </p>
+            </article>
+        </section>
+        <button onclick="goBack()">Regresar</button>
+        <button onclick="startQuiz()">Iniciar Evaluación</button>
+    </main>
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+    <script>
+        function goBack() {
+            window.location.href = "cursos.html";
+        }
+
+        function startQuiz() {
+            window.location.href = "evaluacionhistoria.html"; // Redirige a la página del cuestionario
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Matemática</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cuestionario de Matemática</h1>
+    </header>
+    <main>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <fieldset>
+                <legend>1. ¿Qué es una ecuación de primer grado?</legend>
+                <label><input type="radio" name="q1" value="a"> Una ecuación con una sola variable y un término cuadrático.</label><br>
+                <label><input type="radio" name="q1" value="b"> Una ecuación con una sola variable y un término lineal.</label><br>
+                <label><input type="radio" name="q1" value="c"> Una ecuación con más de una variable.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 2 -->
+            <fieldset>
+                <legend>2. ¿Cuál es la fórmula general para resolver una ecuación cuadrática?</legend>
+                <label><input type="radio" name="q2" value="a"> x = (-b ± √(b² - 4ac)) / 2a</label><br>
+                <label><input type="radio" name="q2" value="b"> x = a² + b²</label><br>
+                <label><input type="radio" name="q2" value="c"> x = (b ± √a) / c</label><br>
+            </fieldset>
+
+            <!-- Pregunta 3 -->
+            <fieldset>
+                <legend>3. ¿Qué establece el Teorema de Pitágoras?</legend>
+                <label><input type="radio" name="q3" value="a"> La relación entre los ángulos de un triángulo rectángulo.</label><br>
+                <label><input type="radio" name="q3" value="b"> La relación entre los lados de un triángulo rectángulo.</label><br>
+                <label><input type="radio" name="q3" value="c"> La fórmula para calcular el área de un triángulo rectángulo.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 4 -->
+            <fieldset>
+                <legend>4. ¿Qué es una derivada en cálculo diferencial?</legend>
+                <label><input type="radio" name="q4" value="a"> El área bajo una curva.</label><br>
+                <label><input type="radio" name="q4" value="b"> La pendiente de la tangente a la curva en un punto.</label><br>
+                <label><input type="radio" name="q4" value="c"> La integral de una función.</label><br>
+            </fieldset>
+
+            <!-- Pregunta 5 -->
+            <fieldset>
+                <legend>5. ¿Cómo se resuelve una fracción algebraica?</legend>
+                <label><input type="radio" name="q5" value="a"> Multiplicando ambos numeradores.</label><br>
+                <label><input type="radio" name="q5" value="b"> Simplificando los términos comunes.</label><br>
+                <label><input type="radio" name="q5" value="c"> Sumando los denominadores.</label><br>
+            </fieldset>
+
+            <button type="button" onclick="submitQuiz()">Enviar Cuestionario</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
+            <button onclick="goBack()">Regresar</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+
+    <script>
+        // Función para calcular el puntaje
+        function submitQuiz() {
+            let score = 0;
+
+            // Respuestas correctas
+            const correctAnswers = {
+                q1: "b", 
+                q2: "a", 
+                q3: "b", 
+                q4: "b", 
+                q5: "b"
+            };
+
+            // Comprobar respuestas
+            for (let i = 1; i <= 5; i++) {
+                let selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedAnswer && selectedAnswer.value === correctAnswers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            // Mostrar resultado
+            document.getElementById("quizForm").style.display = "none";
+            document.getElementById("result").style.display = "block";
+            document.getElementById("score").innerText = `Tu puntaje es ${score} de 5.`;
+        }
+
+        function goBack() {
+            window.location.href = "matematica.html"; 
+        }
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Química</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Curso de Química</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introducción</h2>
+            <p>En este curso, exploraremos las propiedades, reacciones y transformaciones de la materia. Estudiaremos cómo los elementos químicos interactúan entre sí, las leyes que rigen sus comportamientos, y los procesos químicos fundamentales que permiten la creación de nuevos compuestos.</p>
+            <p><strong>Objetivos:</strong> 
+                <ul>
+                    <li>Comprender la estructura atómica y las propiedades de los elementos químicos.</li>
+                    <li>Analizar las reacciones químicas y su aplicación en la vida cotidiana.</li>
+                    <li>Estudiar las leyes fundamentales que rigen las transformaciones químicas.</li>
+                </ul>
+            </p>
+        </section>
+        <section>
+            <h2>Recursos</h2>
+            <article>
+                <h3>Tabla Periódica</h3>
+                <img src="imagenes/tabla_periodica.jpg" alt="Tabla Periódica" style="max-width: 25%; height: auto;">
+                <p>La tabla periódica es un instrumento fundamental para el estudio de los elementos químicos y sus propiedades. Descubre cómo están organizados los elementos y cómo sus características se relacionan con su ubicación en la tabla.</p>
+                <p><strong>Temas cubiertos:</strong>
+                    <ul>
+                        <li>Estructura de la tabla periódica: grupos, periodos y bloques.</li>
+                        <li>Propiedades de los elementos según su posición en la tabla.</li>
+                        <li>Elementos principales: metales, no metales, y metaloides.</li>
+                    </ul>
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZK1AYrK0BVw?si=0rluiUBkZQ3Y32e5" title="Tabla Periódica" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </article>
+            <article>
+                <h3>Reacciones Químicas</h3>
+                <img src="imagenes/reacciones.jpg" alt="Reacciones químicas" style="max-width: 25%; height: auto;">
+                <p>Las reacciones químicas son procesos fundamentales en la química. Aprende cómo las sustancias reaccionan entre sí para formar nuevos compuestos y cómo se pueden clasificar las reacciones según su tipo.</p>
+                <p><strong>Temas cubiertos:</strong>
+                    <ul>
+                        <li>Tipos de reacciones químicas: síntesis, descomposición, desplazamiento, etc.</li>
+                        <li>Balanceo de ecuaciones químicas.</li>
+                        <li>Factores que afectan la velocidad de las reacciones.</li>
+                    </ul>
+                </p>
+            </article>
+        </section>
+        <button onclick="goBack()">Regresar</button>
+        <button onclick="startQuiz()">Iniciar Evaluación</button>
+    </main>
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+    <script>
+        function goBack() {
+            window.location.href = "cursos.html";
+        }
+
+        function startQuiz() {
+            window.location.href = "evaluacionquimica.html"; // Redirige a la página del cuestionario
+        }
+    </script>
+</body>
+</html>
+

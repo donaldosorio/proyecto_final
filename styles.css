@@ -1,0 +1,107 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Cabecera */
+header {
+    text-align: center;
+    background-color: #0056b3;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Secciones */
+section {
+    width: 100%;
+    max-width: 900px; /* Ajusta el ancho máximo */
+    text-align: center;
+}
+
+/* Artículos */
+article {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+}
+
+article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+article img, article video {
+    max-width: 100%; /* Ajusta al ancho del contenedor */
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Botón regresar */
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #003d80;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    article {
+        padding: 10px;
+    }
+
+    article h3 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+
+
+

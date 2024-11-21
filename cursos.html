@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de Cursos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Asignación de Cursos</h1>
+    </header>
+    <main>
+        <p>Explora y selecciona un curso para comenzar:</p>
+        <ul id="courseList">
+            <li>
+                <h2>Matemática</h2>
+                <p>Aprenderás álgebra, geometría y cálculo diferencial.</p>
+                <button onclick="navigateTo('matematica.html')">Seleccionar</button>
+            </li>
+            <li>
+                <h2>Programación</h2>
+                <p>Descubre los fundamentos de lenguajes como Java y Python.</p>
+                <button onclick="navigateTo('programacion.html')">Seleccionar</button>
+            </li>
+            <li>
+                <h2>Historia</h2>
+                <p>Estudia los eventos más importantes de la humanidad.</p>
+                <button onclick="navigateTo('historia.html')">Seleccionar</button>
+            </li>
+            <li>
+                <h2>Física</h2>
+                <p>Explora las leyes del universo y conceptos como la energía.</p>
+                <button onclick="navigateTo('fisica.html')">Seleccionar</button>
+            </li>
+            <li>
+                <h2>Química</h2>
+                <p>Entiende las propiedades y transformaciones de la materia.</p>
+                <button onclick="navigateTo('quimica.html')">Seleccionar</button>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <p>Institución Educativa © 2024</p>
+    </footer>
+    <script>
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
+
+
